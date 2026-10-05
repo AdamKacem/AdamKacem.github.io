@@ -21,7 +21,7 @@
 <style>
 :root{
   --ink:#08090b; --ink2:#0f1114; --line:#23262d;
-  --paper:#ece7dc; --dim:#9a968c;
+  --paper:#ece7dc; --dim:#aaa69c;
   --lime:#c8f53a; --coral:#ff6a48; --violet:#8f7bff;
   --display:'Syne',sans-serif; --body:'Manrope',sans-serif; --pixel:'Silkscreen',monospace;
 }
@@ -39,7 +39,7 @@ img,video{display:block;max-width:100%}
 html{scrollbar-width:thin;scrollbar-color:#2b2f37 var(--ink)}
 ::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:var(--ink)}::-webkit-scrollbar-thumb{background:#2b2f37}
 
-#bg{position:fixed;inset:0;z-index:0;pointer-events:none}
+#bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.7}
 .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.06;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
 .page{position:relative;z-index:2}
@@ -60,7 +60,7 @@ nav.top a:hover,nav.top a.on{color:var(--ink);background:var(--lime)}
 .name .l2{display:block;padding-left:12vw;-webkit-text-stroke:2px var(--paper);color:transparent;transition:color .4s}
 .name:hover .l2{color:var(--coral);-webkit-text-stroke-color:var(--coral)}
 .hero-row{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;margin-top:46px;align-items:end}
-.hero p.lede{font-size:clamp(18px,2vw,22px);max-width:560px;color:#cfcac0}
+.hero p.lede{font-size:clamp(18px,2vw,22px);max-width:560px;color:#dcd7cc}
 .hero p.lede b{color:var(--lime);font-weight:600}
 .cta{display:flex;flex-wrap:wrap;gap:16px;justify-content:flex-end}
 .stats{display:flex;gap:40px;margin-top:56px;border-top:1px solid var(--line);padding-top:26px}
@@ -103,7 +103,7 @@ section,header.hero{scroll-margin-top:60px}
 .proj:hover .idx{color:var(--lime);-webkit-text-stroke-color:var(--lime)}
 .proj h3{font-family:var(--display);font-weight:700;font-size:clamp(30px,3.2vw,46px);line-height:1;letter-spacing:-.02em;margin-bottom:14px}
 .proj .meta{font-family:var(--pixel);font-size:11px;color:var(--coral);margin-bottom:14px;display:block}
-.proj p{color:#c9c4b9;margin-bottom:18px}
+.proj p{color:#d6d1c6;margin-bottom:18px}
 .proj ul{list-style:none;padding:0;margin-bottom:26px}
 .proj li{padding:9px 0 9px 26px;border-bottom:1px dashed var(--line);position:relative;font-size:15.5px}
 .proj li::before{content:"";position:absolute;left:2px;top:17px;width:8px;height:8px;background:var(--lime)}
@@ -122,7 +122,7 @@ section,header.hero{scroll-margin-top:60px}
 .about{display:grid;grid-template-columns:1.25fr 1fr;gap:60px}
 .about .big{font-family:var(--display);font-size:clamp(26px,2.8vw,38px);line-height:1.2;font-weight:500;letter-spacing:-.015em}
 .about .big span{color:var(--lime)}
-.about p{color:#c9c4b9;margin-top:22px}
+.about p{color:#d6d1c6;margin-top:22px}
 .about p b{color:var(--paper)}
 .stack{border:1px solid var(--line);background:rgba(15,17,20,.75)}
 .stack h4{font-family:var(--pixel);font-weight:400;font-size:12px;color:var(--dim);padding:14px 18px;border-bottom:1px solid var(--line)}
@@ -153,6 +153,30 @@ section,header.hero{scroll-margin-top:60px}
 .now-item span{font-size:13.5px;color:var(--dim)}
 @media (max-width:620px){.now-strip{flex-direction:column;width:100%}.now-label{padding:8px 16px}.now-item{border-left:0;border-top:1px solid var(--line)}}
 
+
+/* readability: soft dark halo behind text so the background never fights it */
+.lede,.proj p,.proj li,.about p,.sec-title p,.contact p,.edu,.hero .hi,.reroll,.proj .meta,.xp p,.xp li{text-shadow:0 1px 2px rgba(8,9,11,.95),0 0 14px rgba(8,9,11,.9),0 0 28px rgba(8,9,11,.7)}
+.name,.sec-title h2,.contact h2,.proj h3{text-shadow:0 2px 24px rgba(8,9,11,.85)}
+
+/* experience */
+.xp{display:grid;gap:0;border-top:1px solid var(--line)}
+.job{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1.6fr);gap:40px;padding:42px 0;border-bottom:1px solid var(--line);align-items:start}
+.job .who{display:flex;flex-direction:column;gap:10px}
+.job .co{font-family:var(--display);font-weight:800;font-size:clamp(38px,5.2vw,76px);line-height:.9;letter-spacing:-.03em;text-transform:uppercase;color:var(--paper);transition:color .3s}
+.job:hover .co{color:var(--c,var(--lime))}
+.job .co.sm{font-size:clamp(28px,3.6vw,50px)}
+.job .place{font-family:var(--pixel);font-size:11px;color:var(--dim)}
+.job .when{display:inline-block;width:fit-content;font-family:var(--pixel);font-size:11px;color:var(--ink);background:var(--c,var(--lime));padding:4px 9px;margin-top:6px}
+.job h3{font-family:var(--display);font-weight:700;font-size:clamp(22px,2.2vw,28px);line-height:1.15;margin-bottom:14px}
+.job p{color:#d6d1c6;margin-bottom:14px}
+.job ul{list-style:none;padding:0;margin:0 0 18px}
+.job li{padding:7px 0 7px 24px;position:relative;font-size:15.5px;color:#d6d1c6}
+.job li::before{content:"";position:absolute;left:2px;top:15px;width:8px;height:8px;background:var(--c,var(--lime))}
+.job .tags{display:flex;flex-wrap:wrap;gap:8px}
+.job .tags span{font-size:13px;padding:4px 10px;border:1px solid #33373f;color:var(--dim)}
+.job a.more{font-family:var(--pixel);font-size:11px;color:var(--paper);text-decoration:none;border-bottom:1px solid var(--c,var(--lime))}
+@media (max-width:860px){.job{grid-template-columns:1fr;gap:18px;padding:32px 0}}
+
 /* achievements */
 .wins{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 .win{position:relative;display:flex;flex-direction:column;border:1px solid var(--line);background:rgba(15,17,20,.85);padding:0 24px 22px;text-decoration:none;transition:transform .2s, border-color .2s, box-shadow .2s}
@@ -164,7 +188,7 @@ section,header.hero{scroll-margin-top:60px}
 .win .rank sup{font-size:.38em;vertical-align:top;margin-left:2px;letter-spacing:0}
 .win .of{font-family:var(--pixel);font-size:11px;color:var(--dim);margin:8px 0 18px}
 .win h3{font-family:var(--display);font-weight:700;font-size:23px;line-height:1.15;margin-bottom:10px}
-.win p{font-size:15px;color:#c9c4b9;margin-bottom:18px;flex:1}
+.win p{font-size:15px;color:#d6d1c6;margin-bottom:18px;flex:1}
 .win .foot{display:flex;justify-content:space-between;align-items:center;font-family:var(--pixel);font-size:11px;color:var(--dim);border-top:1px dashed var(--line);padding-top:12px}
 .win .foot b{font-weight:400;color:var(--paper)}
 .win.soon{border-style:dashed;align-items:flex-start;justify-content:center;opacity:.75}
@@ -247,7 +271,7 @@ footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <div class="grain" aria-hidden="true"></div>
 
 <nav class="top" aria-label="Sections">
-  <a href="#home">Home</a><a href="#work">Work</a><a href="#about">About</a><a href="#wins">Wins</a><a href="#contact">Contact</a>
+  <a href="#home">Home</a><a href="#work">Work</a><a href="#about">About</a><a href="#xp">XP</a><a href="#wins">Wins</a><a href="#contact">Contact</a>
 </nav>
 
 <canvas id="mage" width="16" height="19" title="Hi! Click me" aria-label="Pixel mage. Scrolls with the page."></canvas>
@@ -366,6 +390,58 @@ footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
       <h4>// into</h4>
       <div class="row"><span class="pill">Computer vision</span><span class="pill">Procedural generation</span><span class="pill">Game dev</span></div>
     </div>
+  </div>
+</section>
+
+<section class="sec w" id="xp">
+  <div class="sec-title rv"><h2>Where I<br><em>worked</em></h2><p>Internships so far.</p></div>
+  <div class="xp">
+    <article class="job rv" style="--c:var(--violet)">
+      <div class="who">
+        <div class="co">TALAN</div>
+        <span class="place">Talan Innovation Factory · Tunis</span>
+        <span class="when">Jul – Aug 2026</span>
+      </div>
+      <div>
+        <h3>Software Engineering Intern · AI &amp; Backend</h3>
+        <ul>
+          <li>Hands-on workshops on generative AI, agentic AI, RAG and CNNs</li>
+          <li>Joined a 12-person team on an AI-assisted urban planning platform: LangGraph multi-agent pipelines, a RAG assistant that cites French law, FastAPI and Mistral</li>
+          <li>Learned how a production team keeps AI output in check: structured outputs, human validation steps and verified citations</li>
+        </ul>
+        <div class="tags"><span>Agentic AI</span><span>RAG</span><span>LangGraph</span><span>FastAPI</span></div>
+      </div>
+    </article>
+    <article class="job rv" style="--c:var(--lime)">
+      <div class="who">
+        <div class="co sm">El Mekina Digitale</div>
+        <span class="when">Jul – Aug 2025</span>
+      </div>
+      <div>
+        <h3>Unity / Procedural Generation Intern</h3>
+        <ul>
+          <li>Developed procedural generation systems using recursive BSP algorithms</li>
+          <li>Implemented interactive systems and gameplay logic with Unity and C#</li>
+          <li>Took part in optimizing real-time interactive environments</li>
+        </ul>
+        <div class="tags"><span>Unity</span><span>C#</span><span>Procedural generation</span></div>
+      </div>
+    </article>
+    <article class="job rv" style="--c:var(--coral)">
+      <div class="who">
+        <div class="co sm">Newrest</div>
+        <span class="place">Tunis-Carthage Airport</span>
+        <span class="when">2024 · End-of-studies project</span>
+      </div>
+      <div>
+        <h3>Computer Vision Intern</h3>
+        <ul>
+          <li>Built a camera-based checkout that recognizes products on the counter and writes the bill automatically</li>
+          <li>Tested live in the Daily Break coffee shop</li>
+        </ul>
+        <a class="more" href="#work">See the project ↑</a>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -503,7 +579,7 @@ function frame(t){
     rm.glow += (target - rm.glow) * .08;
     const pad = 7, x = rm.x + pad, y = rm.y + pad, w = (rm.w - pad * 2) * k, h = (rm.h - pad * 2);
     const col = rm.hue < .55 ? '200,245,58' : rm.hue < .8 ? '143,123,255' : '255,106,72';
-    if (rm.glow > .02) { ctx.fillStyle = `rgba(${col},${rm.glow * .07})`; ctx.fillRect(x, y, w, h); }
+    if (rm.glow > .02) { ctx.fillStyle = `rgba(${col},${rm.glow * .045})`; ctx.fillRect(x, y, w, h); }
     ctx.strokeStyle = rm.glow > .02 ? `rgba(${col},${.08 + rm.glow * .55})` : 'rgba(236,231,220,.055)';
     ctx.lineWidth = 1;
     ctx.strokeRect(x + .5, y + .5, w, h);
@@ -618,7 +694,7 @@ document.querySelectorAll('[data-count]').forEach(el => {
 });
 const navLinks = [...document.querySelectorAll('nav.top a')];
 const so = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) navLinks.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id)); }), {rootMargin: '-45% 0px -50% 0px'});
-['home', 'work', 'about', 'wins', 'contact'].forEach(id => so.observe(document.getElementById(id)));
+['home', 'work', 'about', 'xp', 'wins', 'contact'].forEach(id => so.observe(document.getElementById(id)));
 </script>
 </body>
 </html>
