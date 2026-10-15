@@ -327,6 +327,25 @@ footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   <article class="proj rv">
     <div class="idx">02</div>
     <div class="tilt"><div class="frame">
+      <img src="assets/restoration_compare.jpg" alt="Damaged digits, the U-Net's restored version and the clean target" loading="lazy">
+      <span class="tag">ssim 0.966</span>
+    </div></div>
+    <div>
+      <span class="meta">Python · TensorFlow · OpenCV · Team of two</span>
+      <h3>Image Restoration</h3>
+      <p>Can a network clean a document that has a stamp, blur, noise and a covered patch on it? We generated damaged images with OpenCV and compared a CNN, a U-Net and a wavelet CNN on them. Made with Mohamed Beldi; my part was researching the models and running part of the tuning.</p>
+      <ul>
+        <li>Synthetic damaged/clean pairs, so no manual labeling</li>
+        <li>Random search tuning took the U-Net from 17.4 to 24.6 dB PSNR</li>
+        <li>Found and fixed a bug that scored models on their own training images</li>
+      </ul>
+      <div class="btns"><a class="btn" href="https://github.com/AdamKacem/image-restoration" target="_blank" rel="noopener">GitHub ↗</a></div>
+    </div>
+  </article>
+
+  <article class="proj rv">
+    <div class="idx">03</div>
+    <div class="tilt"><div class="frame">
       <video src="assets/rooms.mp4" poster="assets/rooms_poster.jpg" autoplay muted loop playsinline aria-label="Maps generated with different seeds"></video>
       <span class="tag">seed 4821</span>
     </div></div>
@@ -344,7 +363,7 @@ footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   </article>
 
   <article class="proj rv">
-    <div class="idx">03</div>
+    <div class="idx">04</div>
     <div class="tilt"><div class="frame">
       <img src="assets/warrior_gameplay.jpg" alt="Pointless Warrior gameplay" loading="lazy">
       <span class="tag">warrior 0.97</span>
@@ -367,24 +386,6 @@ footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
         <a class="btn coral" href="https://adamkacem.itch.io/pointless-warrior" target="_blank" rel="noopener">▶ Play it</a>
         <a class="btn ghost" href="https://github.com/AdamKacem/pointless-warrior" target="_blank" rel="noopener">Code ↗</a>
       </div>
-    </div>
-  </article>
-  <article class="proj rv">
-    <div class="idx">04</div>
-    <div class="tilt"><div class="frame">
-      <img src="assets/restoration_compare.jpg" alt="Damaged digits, the U-Net's restored version and the clean target" loading="lazy">
-      <span class="tag">ssim 0.966</span>
-    </div></div>
-    <div>
-      <span class="meta">Python · TensorFlow · OpenCV · Team of two</span>
-      <h3>Image Restoration</h3>
-      <p>Can a network clean a document that has a stamp, blur, noise and a covered patch on it? We generated damaged images with OpenCV and compared a CNN, a U-Net and a wavelet CNN on them. Made with Mohamed Beldi; my part was researching the models and running part of the tuning.</p>
-      <ul>
-        <li>Synthetic damaged/clean pairs, so no manual labeling</li>
-        <li>Random search tuning took the U-Net from 17.4 to 24.6 dB PSNR</li>
-        <li>Found and fixed a bug that scored models on their own training images</li>
-      </ul>
-      <div class="btns"><a class="btn" href="https://github.com/AdamKacem/image-restoration" target="_blank" rel="noopener">GitHub ↗</a></div>
     </div>
   </article>
 </section>
